@@ -47,13 +47,11 @@ dependencies {
     implementation 'com.google.ar:core:1.15.0'
 
     // Provides ArFragment, and other UX resources.
-    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.10.0"
-
-    // Alternatively, use ArSceneView without the UX dependency.
-    //implementation 'com.google.ar.sceneform:core:1.15.0'
+    implementation ("com.google.ar.sceneform.ux:sceneform-ux:1.15.0") {
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
 }
 
-/*
 sceneform.asset('sampledata/cubito.fbx',
         'default',
         'sampledata/cubito.sfa',
@@ -72,4 +70,4 @@ sceneform.asset('sampledata/cubito3.fbx',
 sceneform.asset('sampledata/pin.fbx',
         'default',
         'sampledata/pin.sfa',
-        'src/main/assets/pin')*/
+        'src/main/assets/pin')
